@@ -3,22 +3,17 @@ package com.example.sharedprefs
 import android.icu.text.CaseMap
 import java.io.Serializable
 
-class Book:Serializable{
+class Book(val id:String,val name:String,val reasonToRead:String,isFavorite:Boolean)
+fun toList(id:String,name: String,reasonToRead: String,isFavorite: Boolean){
+    return toList("$id","$name","$reasonToRead",false)
 
-    var title:String? = null
-    var reasonToRead:String? = null
-    var hasBeenRead:Boolean = false
-    var id:String? = null
-
-
-    constructor(title:String,reasonToRead:String,hasBeenRead:Boolean,id:String){
-        this.title = title
-        this.reasonToRead = reasonToRead
-        this.hasBeenRead = false
-        this.id = id
-
+    fun TakeStringListReturnMap(var myList:List<String>) {
+        val myMap = mutableMapOf<String, String>()
+        myList.associateTo(myMap) {it to it}
+    }
+    fun csvToString(var myCSV){
+        return Book(myCSV)
     }
 
-
-
 }
+
