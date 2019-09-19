@@ -1,0 +1,26 @@
+SELECT * FROM player;
+
+SELECT first_name, last_name FROM player;
+
+SELECT age FROM player WHERE id BETWEEN 1 AND 3;
+
+INSERT INTO player VALUES(6, "Manning", "Peyton", 40, "Offense");
+
+SELECT * FROM player WHERE first_name LIKE "M%";
+
+UPDATE player set id = 222 where first_name = "Peyton";
+
+UPDATE team set name = "Seattle Seahawks" where superbowls_won =0;
+
+SELECT name from team where superbowls_won = 0;
+
+DELETE from player where first_name like "p%";
+
+SELECT first_name from player where first_name = "Peyton";
+
+INSERT INTO player VALUES(8, "Dwayne THE", " GOAT Johnson", 36, "Offense");
+
+SELECT first_name FROM player WHERE id > 2 AND age > 23;
+
+SELECT * FROM team
+JOIN player ON team.id = player.id
