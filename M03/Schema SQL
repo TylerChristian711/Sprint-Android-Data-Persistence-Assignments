@@ -1,0 +1,37 @@
+CREATE TABLE player (
+id INTEGER PRIMARY KEY,  
+first_name TEXT,
+last_name Text,
+age INTEGER,
+position TEXT);
+
+INSERT INTO player(id,first_name,last_name,age,position) VALUES(1,"Christian","Wilkins",23,"Defense");
+
+INSERT INTO player(id,first_name,last_name,age,position) VALUES(2,"Andrew","Beck",23,"Offense");
+
+INSERT INTO player(id,first_name,last_name,age,position) VALUES(3,"Jamal","Adams",23,"Defense");
+
+INSERT INTO player(id,first_name,last_name,age,position) VALUES(4,"Kirk","Cousins",31,"Offense");
+
+INSERT INTO player(id,first_name,last_name,age,position) VALUES(5,"DJ","Alexander",27,"Offense");
+
+
+CREATE TABLE team(
+id INTEGER PRIMARY KEY,
+name TEXT,
+superbowls_won INTEGER,
+FOREIGN KEY(id) REFERENCES player(id));
+
+
+INSERT INTO team(id,name,superbowls_won) VALUES (1,"miami dolphins",2);
+
+INSERT INTO team(id,name,superbowls_won) VALUES (2,"denver broncos",3);
+
+INSERT INTO team(id,name,superbowls_won) VALUES (3,"new york jets",1);
+
+INSERT INTO team(id,name,superbowls_won) VALUES (4,"minnesota vikings",1);
+
+INSERT INTO team(id,name,superbowls_won) VALUES (5,"jacksonville jaguars",0);
+
+
+
